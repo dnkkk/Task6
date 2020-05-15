@@ -7,7 +7,8 @@ class Worker:
         self.salary = self.calculate_salary(self.hours_work, self.hourly_wage)
         self.premium = round(self.calculate_premium(self.experience, self.salary))
 
-    def calculate_premium(self, experience, salary):
+    @staticmethod
+    def calculate_premium(experience, salary):
         if experience < 1:
             return 0
         elif experience < 3:
@@ -17,7 +18,8 @@ class Worker:
         else:
             return salary * 0.15
 
-    def calculate_salary(self, hours_work, hourly_wage):
+    @staticmethod
+    def calculate_salary(hours_work, hourly_wage):
         return hours_work * hourly_wage
 
     def __str__(self):
